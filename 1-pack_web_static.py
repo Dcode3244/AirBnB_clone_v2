@@ -8,7 +8,7 @@ from datetime import datetime
 def do_pack():
     " generates .tgz archive "
     date = datetime.utcnow()
-    path = 'versions/web_static{}{}{}{}{}{}.tgz'.format(date.year, date.month,
+    path = 'versions/web_static_{}{}{}{}{}{}.tgz'.format(date.year, date.month,
                                                         date.day, date.hour,
                                                         date.minute,
                                                         date.second)
