@@ -9,9 +9,9 @@ def do_pack():
     " generates .tgz archive "
     date = datetime.utcnow()
     path = 'versions/web_static_{}{}{}{}{}{}.tgz'.format(date.year, date.month,
-                                                        date.day, date.hour,
-                                                        date.minute,
-                                                        date.second)
+                                                         date.day, date.hour,
+                                                         date.minute,
+                                                         date.second)
     local("mkdir -p versions")
     a = local("tar -czvf {} web_static".format(path))
     if a.failed:
