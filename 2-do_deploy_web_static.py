@@ -10,15 +10,15 @@ env.hosts = ['54.237.104.37', '35.174.176.205']
 
 
 def do_deploy(archive_path):
-    " distributes an archive to web servers "
+    " distributes an arvhibe to web servers "
     if os.path.exists(archive_path) is False:
         return False
     if put('{}'.format(archive_path), '/tmp/').failed is True:
         return False
     name = archive_path.replace('.tgz', '')
     name = name.replace('versions/', '')
-    if run('tar -xzf /tmp/web_static*.tgz -C \
-            /data/web_static/releases/{}'.format(name)).failed is True:
+    if run('tar -xzvf /tmp/web_static*.tgz -C \
+            /data/web_static/releases/'.format(name)).failed is True:
         return False
     if run('rm -f /tmp/web_static*').failed is True:
         return False
