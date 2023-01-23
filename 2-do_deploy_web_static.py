@@ -27,7 +27,7 @@ def do_pack():
 
 def do_deploy(archive_path=''):
     " distributes an arvhibe to web servers "
-    if os.path.exists(archive_path) is False:
+    if os.path.isfile(archive_path) is False:
         return False
     a = put('{}'.format(archive_path), '/tmp/')
     name = archive_path.replace('.tgz', '')
