@@ -27,17 +27,20 @@ def do_pack():
 
 def do_deploy(archive_path=''):
     " distributes an arvhibe to web servers "
-    if os.path.isfile(archive_path) is False:
+    if os.path.exists(archive_path) is False:
         return False
-    a = put('{}'.format(archive_path), '/tmp/')
+    if put('{}'.format(archive_path), '/tmp/').failed is True:
+        return False
     name = archive_path.replace('.tgz', '')
     name = name.replace('versions/', '')
-    b = run('tar -xzvf /tmp/web_static*.tgz -C \
-            /data/web_static/releases/'.format(name))
-    c = run('rm -f /tmp/web_static*')
-    d = run('rm -rf /data/web_static/current')
-    e = run('ln -sf /data/web_static/releases/web_static* \
-            /data/web_static/current')
-    if (a.failed or b.failed or c.failed or d.failed or e.failed):
+    if run('tar -xzvf /tmp/web_static*.tgz -C \
+            /data/web_static/releases/'.format(name)).failed is True:
+        return False
+    if run('rm -f /tmp/web_static*').failed is True:
+        return False
+    if run('rm -rf /data/web_static/current').failed is True:
+        return False
+    if run('ln -sf /data/web_static/releases/web_static* \
+            /data/web_static/current').failed is True:
         return False
     return True
