@@ -19,8 +19,8 @@ printf %s "server {
     }
 
     location /hbnb_static {
-       	alias /data/web_static/current/
-	index index.html
+       	alias /data/web_static/current/;
+	index index.html;
     }
 
     error_page 404 /404.html;
