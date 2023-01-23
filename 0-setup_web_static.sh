@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # a script that sets up your web servers for the deployment of web_static
 
-mkdir -fp /data/web_static/releases/test/
-mkdir -fp /data/web_static/shared/
+mkdir -p /data/web_static/releases/test/
+mkdir -p /data/web_static/shared/
 echo "It is working" > /data/web_static/releases/test/index.html
 ln -fs /data/web_static/releases/test/ /data/web_static/current
 sudo chown -R ubuntu:ubuntu /data/
