@@ -5,7 +5,8 @@
         /hbnb: displays 'HBNB'
         /c/<text>: displays "C", followed by the value of text variable
         /python/<text>: displays "Python followed by the value of text
-        /number/<n>: displays "n is a number" only is n is an integer
+        /number/<n>: displays "n is a number" only if n is an integer
+        /number_template/<n>: displays HTML page only if n is an integer
 """
 
 from flask import Flask, render_template
