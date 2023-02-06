@@ -52,6 +52,10 @@ article {
 	height: 60px;
 }
 
+headline h2 {
+	padding-right: 65px;
+}
+
 .information {
 	display: block;
 	height: 80px;

@@ -48,7 +48,7 @@
 				{% for place in places.values()|sort(attribute='name') %}
 				<article>
 					<div class="headline">
-						<h2>My home</h2>
+						<h2>{{ place.name }}</h2>
 						<div class="price_by_night">&#36;{{ place.price_by_night }}</div>
 					</div>
 					<div class="information">
