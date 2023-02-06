@@ -2,7 +2,7 @@
 """
 starts a Flask web application on 0.0.0.0:5000
     Routes:
-        /states_list: displays HTML page: with list of State objects
+        /hbnb_filters: displays HBnB HTML page
 """
 
 from models import storage
@@ -16,7 +16,8 @@ app.url_map.strict_slashes = False
 
 
 @app.route('/hbnb_filters')
-def states():
+def hbnb_filters():
+    """ Displays the main HBnB filters HTML page """
     states = storage.all(State)
     amenities = storage.all(Amenity)
     return render_template('10-hbnb_filters.html',
@@ -25,6 +26,7 @@ def states():
 
 @app.teardown_appcontext
 def teardown(exc):
+    """ Removes the current SQLAlchemy session """
     storage.close()
 
 
