@@ -33,6 +33,10 @@ article {
 	width: 100%;
 }
 
+.headline h2 {
+	padding-right: 65px;
+}
+
 .price_by_night {
 	display: flex;
 	justify-content: center;
@@ -50,10 +54,6 @@ article {
 	float: right;
 	min-width: 60px;
 	height: 60px;
-}
-
-headline h2 {
-	padding-right: 65px;
 }
 
 .information {
