@@ -2,12 +2,7 @@
 """
 starts a Flask web application on 0.0.0.0:5000
 	Routes:
-		/states_list: displays HTML page:(inside the tag BODY)
-			- H1 tag: "States"
-			- UL tag: with the list of all State objects present in
-					DBStorage sorted by name(A->Z)
-				- LI tag: description of one
-						State: <state.id>: <B><state.name></B>
+		/states_list: displays HTML page: with list of State objects
 """
 
 from models import storage
