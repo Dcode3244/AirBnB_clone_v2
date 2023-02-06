@@ -11,7 +11,9 @@ starts a Flask web application on 0.0.0.0:5000
 """
 
 from models import storage
+from models.state import State
 from flask import Flask, render_template
+
 
 app = Flask(__name__)
 app.url_map.strict_slashes=False
@@ -19,7 +21,7 @@ app.url_map.strict_slashes=False
 
 @app.route('/states_list')
 def states_list():
-	states = storage.all("State")
+	states = storage.all(State)
 	return render_template('7-states_list.html', states=states)
 
 
